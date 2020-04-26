@@ -1,8 +1,11 @@
 <tbody>
   <% @lists.each do |list| %>
-    <tr id="list-<%= list.id %>">
-      <td><%= list.name %></td>
-      <td><%= list.status %></td>
-    </tr>
+    <% if list.collective? or current_user == list.user_id %>
+      <tr id="list-<%= list.id %>">
+        <td><%= list.id %></td>
+        <td><%= list.name %></td>
+        <td><%= list.status %></td>
+      </tr>
+    <% end %>
   <% end %>
 </tbody>
