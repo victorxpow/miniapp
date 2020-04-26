@@ -11,7 +11,6 @@ feature 'User view lists' do
 
     expect(page).to have_content(list.name)
     expect(page).to have_content(list.description)
-    expect(page).to have_content(list.task.name)
-    expect(page).to have_content(list.task.description)
+    expect(page).to have_content(list.description)
   end
 end

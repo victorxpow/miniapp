@@ -1,0 +1,8 @@
+<tbody>
+  <% @lists.each do |list| %>
+    <tr id="list-<%= list.id %>">
+      <td><%= list.name %></td>
+      <td><%= list.status %></td>
+    </tr>
+  <% end %>
+</tbody>
