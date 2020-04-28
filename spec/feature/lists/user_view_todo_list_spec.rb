@@ -35,4 +35,3 @@ feature 'User view lists' do
     expect(page).not_to have_content(other_list.id)
   end
 end
- 

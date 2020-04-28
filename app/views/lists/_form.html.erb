@@ -12,6 +12,12 @@
         <%= f.label :status %>
         <%= f.select :status, List.statuses.map { |key, value| [key.humanize, key] } %>
     </p>
+    <p>
+      <%= f.fields_for :tasks do |f| %>
+        <%= render 'task_fields', f: f %>
+      <% end %>
+      <%= link_to_add_fields "Nova Tarefa", f, :tasks %>
+    </p>
   </div>
   <div class="button">
     <div class='ls-actions-btn button'>
@@ -20,3 +26,24 @@
     </div>
   </div>
 <% end %>
+
+<script>
+
+$('form').on('click', '.remove-fields', function(event) {
+  console.log('clicked')
+  $(this).prev('input[type=hidden]').val('1');
+  $(this).closest('fieldset').hide();
+  return event.preventDefault();
+  });
+
+$('form').on('click', '.add_fields', function(event) {
+  console.log('clicked!')
+  var regexp, time;
+  time = new Date().getTime();
+  regexp = new RegExp($(this).data('id'), 'g');
+  $(this).before($(this).data('fields').replace(regexp, time));
+  return event.preventDefault();
+});
+
+
+</script>
