@@ -8,6 +8,8 @@
         <% list.tasks.each do |task| %>
           <td><%= task.title %></td>
         <% end %>
+        <%= link_to favorite_text, favorites_update_path(list: list), id:
+        'favorite_link', remote: true %>
       </tr>
     <% end %>
   <% end %>

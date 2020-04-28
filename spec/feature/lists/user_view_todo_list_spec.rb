@@ -45,7 +45,7 @@ feature 'User view lists' do
     login_as(user, scope: :user)
     visit root_path
     click_on 'Lista de Tarefas'
-    click_on 'Favoritos'
+    click_on 'Favorite'
 
     expect(page).to have_content(list.name)
     expect(page).to have_content(list.description)
