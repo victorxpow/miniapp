@@ -5,6 +5,9 @@
         <td><%= list.id %></td>
         <td><%= list.name %></td>
         <td><%= list.status %></td>
+        <% list.tasks.each do |task| %>
+          <td><%= task.title %></td>
+        <% end %>
       </tr>
     <% end %>
   <% end %>

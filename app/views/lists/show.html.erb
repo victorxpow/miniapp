@@ -2,3 +2,6 @@
 <%= @list.name %>
 <%= @list.status %>
 <%= @list.description %>
+<% @list.tasks.each do |task| %>
+<%= task.title %>
+<% end %>
