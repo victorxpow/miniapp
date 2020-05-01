@@ -4,4 +4,6 @@
 <%= @list.description %>
 <% @list.tasks.each do |task| %>
 <%= task.title %>
+<%= link_to favorite_text, favorites_update_path(list: @list), id:
+        'favorite_link', remote: true %>
 <% end %>

@@ -1,0 +1,7 @@
+<tbody>
+  <% @current_user.favorites.each do |favorite| %>
+      <tr id="favorite-<%= favorite.id %>">
+        <td><%= favorite.list.id %></td>
+        <td><%= favorite.list.name %></td>
+  <% end %>
+</tbody>

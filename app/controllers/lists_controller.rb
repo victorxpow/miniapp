@@ -1,12 +1,17 @@
 class ListsController < ApplicationController
   def index
     @lists = List.all
-    @favorite_exists = Favorite.where(list: @list, user: current_user) == [] ? false : true
+    @favorite_exists = Favorite.where(list: @list, user: current_user) != []
+  end
+
+  def favorite
+    @lists = List.all
+    @favorite_exists = Favorite.where(list: @list, user: current_user) != []
   end
 
   def show
-    @favorite_exists = Favorite.where(list: @list, user: current_user) == [] ? false : true
     @list = List.find(params[:id])
+    @favorite_exists = Favorite.where(list: @list, user: current_user) != []
   end
 
   def new

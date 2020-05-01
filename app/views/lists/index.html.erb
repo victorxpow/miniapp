@@ -1,6 +1,6 @@
 <tbody>
   <% @lists.each do |list| %>
-    <% if list.collective? or current_user == list.user_id %>
+    <% if list.collective? or current_user == list.user %>
       <tr id="list-<%= list.id %>">
         <td><%= list.id %></td>
         <td><%= list.name %></td>
@@ -8,10 +8,13 @@
         <% list.tasks.each do |task| %>
           <td><%= task.title %></td>
         <% end %>
-        <%= link_to favorite_text, favorites_update_path(list: list), id:
-        'favorite_link', remote: true %>
       </tr>
+        <td><%= link_to 'Detalhes', list_path(list) %></td>
+
+--------------
+
     <% end %>
   <% end %>
 </tbody>
 <%= link_to 'Nova Lista de Tarefa', new_list_path, class: 'ls-btn-primary button' %>
+<%= link_to 'Lista de Favoritos', favorite_lists_path, class: 'ls-btn-primary button' %>
