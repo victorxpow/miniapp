@@ -7,7 +7,7 @@ feature 'User create todo list' do
     login_as(user, scope: :user)
     visit root_path
     click_on 'Lista de Tarefas'
-    click_on 'Nova Lista de Tarefa'
+    click_on 'Nova Lista'
     fill_in 'Name', with: 'Tarefas de casa'
     fill_in 'Description', with: 'Tarefas que serão realizadas diariamente.'
     select 'Collective', from: 'Status'

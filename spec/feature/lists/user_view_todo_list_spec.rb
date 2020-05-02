@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'User view lists' do
+feature 'User view lists', js: true do
   scenario 'Successfully' do
     user = create(:user)
     list = create(:list, user: user)

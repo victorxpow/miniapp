@@ -1,4 +1,4 @@
 <p id="notice"><%= notice %></p>
-<%= link_to 'New List', new_list_path, class: "btn btn-primary" %>
+<%= link_to 'Nova Lista', new_list_path, class: "btn btn-primary" %>
 <hr>
 <%= tag.div id: :boards, data: { lists: @lists.to_json(include: :tasks) } %>
